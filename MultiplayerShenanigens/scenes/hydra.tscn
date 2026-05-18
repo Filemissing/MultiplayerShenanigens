@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6uxmr5gd4qbe"]
+
+[ext_resource type="Texture2D" uid="uid://b5l1fvblkfq81" path="res://MultiplayerShenanigens/images/card_portraits/card.png" id="1_h4hap"]
+
+[node name="Hydra" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -8.0
+offset_right = 1939.0
+offset_bottom = 1089.0
+texture = ExtResource("1_h4hap")

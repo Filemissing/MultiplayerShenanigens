@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37203.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplayerShenanigens", "MultiplayerShenanigens.csproj", "{81C139CA-9CB9-442E-B324-783B324656FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81C139CA-9CB9-442E-B324-783B324656FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C139CA-9CB9-442E-B324-783B324656FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C139CA-9CB9-442E-B324-783B324656FB}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{81C139CA-9CB9-442E-B324-783B324656FB}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{81C139CA-9CB9-442E-B324-783B324656FB}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{81C139CA-9CB9-442E-B324-783B324656FB}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8BE4A78-723D-4951-9F8C-751C5FD6C193}
+	EndGlobalSection
+EndGlobal
