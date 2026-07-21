@@ -6,11 +6,12 @@ using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Cards;
 
 namespace MultiplayerShenanigens.MultiplayerShenanigensCode.Cards;
 
 [Pool(typeof(RegentCardPool))]
-public class Syphon() : MultiplayerShenanigensCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly)
+public class Syphon() : MultiplayerShenanigensCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyPlayer)
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
 

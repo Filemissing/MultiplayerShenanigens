@@ -6,11 +6,12 @@ using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Cards;
 
 namespace MultiplayerShenanigens.MultiplayerShenanigensCode.Cards;
 
 [Pool(typeof(ColorlessCardPool))]
-public class Yoink() : MultiplayerShenanigensCard(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly)
+public class Yoink() : MultiplayerShenanigensCard(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyPlayer)
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
 
@@ -19,18 +20,19 @@ public class Yoink() : MultiplayerShenanigensCard(0, CardType.Skill, CardRarity.
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
         ArgumentNullException.ThrowIfNull(cardPlay.Target.Player, "cardPlay.Target.Player");
 
-        CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 0, 1);
+        // this gives the choice to the targeted player, not the player that played the card
+        CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.RemoveSelectionPrompt, 1);
         var cards = await CardSelectCmd.FromHand(choiceContext, cardPlay.Target.Player, prefs, null, this);
 
         CardModel? cardToYoink = cards.FirstOrDefault();
 
-        ArgumentNullException.ThrowIfNull(cardToYoink, "cardToYoink");
+        if (cardToYoink == null)
+            return; // silent return if no card was selected, hand is probably empty
 
-        await CardCmd.Exhaust(choiceContext, cardToYoink);
+        CardModel clone = cardToYoink.CreateClone();
+        clone._owner = Owner;
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(clone, PileType.Hand));
 
-        CardModel newCopy = CardFactory.GetDistinctForCombat(Owner, new[] { cardToYoink }, 1, rng: MegaCrit.Sts2.Core.Random.Rng.Chaotic).FirstOrDefault()!;
-
-        if (newCopy != null)
-            await CardPileCmd.AddGeneratedCardToCombat(newCopy, PileType.Hand, addedByPlayer: true);
+       await CardPileCmd.RemoveFromCombat(cardToYoink);
     }
 }

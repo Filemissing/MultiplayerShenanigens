@@ -4,11 +4,11 @@
   "MULTIPLAYERSHENANIGENS-ANCIENT_URN.title": "Ancient Urn",
 
   "MULTIPLAYERSHENANIGENS-GIFT_THAT_KEEPS_ON_GIVING.description": "At the start of your turn draw until your hand is full, all your teammates draw 2 fewer cards at the start of their turns",
-  "MULTIPLAYERSHENANIGENS-GIFT_THAT_KEEPS_ON_GIVING.flavor": "Your cards are mine now",
+  "MULTIPLAYERSHENANIGENS-GIFT_THAT_KEEPS_ON_GIVING.flavor": "Your cards are mine now :]",
   "MULTIPLAYERSHENANIGENS-GIFT_THAT_KEEPS_ON_GIVING.title": "Gift That Keeps On Giving",
 
-  "MULTIPLAYERSHENANIGENS-MINION_FACTORY.description": "Whenever you transform a card into a minion card, a random teammate also transforms a card in their hand into that card",
-  "MULTIPLAYERSHENANIGENS-MINION_FACTORY.flavor": "Now I can use them however I want!",
+  "MULTIPLAYERSHENANIGENS-MINION_FACTORY.description": "Whenever you play a card that creates a minion, a random teammate also plays that card",
+  "MULTIPLAYERSHENANIGENS-MINION_FACTORY.flavor": "You can never have enough!",
   "MULTIPLAYERSHENANIGENS-MINION_FACTORY.title": "Minion Factory",
 
   "MULTIPLAYERSHENANIGENS-BONE_SHIELD.description": "Osty now divides half of the damage received among teammates",

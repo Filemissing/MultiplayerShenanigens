@@ -49,7 +49,5 @@ public class ProductionBelt : MultiplayerShenanigensRelic
         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(copy, PileType.Discard));
 
         await CardPileCmd.RemoveFromCombat(card);
-
-        // this works but the cards added to another players discard pile do not seem to count for the number displayed
     }
 }
